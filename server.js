@@ -19,7 +19,6 @@ const db = knex({
   }
 });
 
-const database = [];
 const app = express();
 const port = 3000;
 
@@ -28,7 +27,7 @@ const port = 3000;
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => { res.json(database.users) });
+app.get("/", (req, res) => { res.send("It is Working") });
 
 app.post("/signin", (req, res) => { signin.handleSignin(req, res, bcrypt, db) });
 
